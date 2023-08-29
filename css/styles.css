@@ -5,13 +5,18 @@ File Name: styles.css
 */
 
 /* CSS Reset */
-body, header, nav, main, footer, img, h1, ul {
+body, header, nav, main, footer, img, h1, ul, section, aside, figure, figcaption {
     margin: 0;
     padding: 0;
     border: 0;
 }
 
 /* Style rule for images */
+/*Style rule for box sizing applies to all elements*/
+*{
+    box-sizing: border-box;
+}
+}
 img {
     max-width: 100%;
     display: block;
@@ -22,6 +27,33 @@ img {
 /* Hide tab-desk class */
 .tab-desk {
     display: none;
+}
+aside { 
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #393684;
+    text-shadow: 3px 3px 10px #8280cb;
+
+}
+figure {
+    position: relative;
+    max-width: 275px;
+    margin: 2% auto;
+    border: 8px solid #373684;
+
+}
+figcaption {
+    position: absolute;
+    bottom: 0;
+    Background: rgba (55, 54, 132, 0.7);
+    color: #fff;
+    width: 100%;
+    padding: 5% 0;
+    text-align: center;
+    font-family: Verdana, Ariel, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 /* Style rules for header content */
@@ -141,7 +173,9 @@ footer a {
 }
 
 /* Media Query for Tablet Viewport */
-@media screen and (min-width: 550px), print {
+@media screen and (min-width: 550px), print 
+grid: grid-gap: 20px
+    {
     
     /* Tablet Viewport: Show tab-desk class, hide mobile class */
     .tab-desk {
@@ -184,6 +218,12 @@ footer a {
 /* Media Query for Desktop Viewport */
 @media screen and (min-width: 769px), print {
     
+    grid-column: 1 / span 2;
+    
+        figcaption:font-size 1em
+        aside: 1/span 4;
+    
+    
     /* Desktop Viewport: Style rule for header */
     header {
         padding: 2%;
@@ -203,7 +243,7 @@ footer a {
     #info ul {
         margin-left: 5%;
     }
-    
+    /* Desktop Viewport
     main h3 {
         font-size: 1.5em;
     }
